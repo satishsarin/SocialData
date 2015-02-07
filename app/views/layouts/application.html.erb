@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SocialData</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav id="myNavbar" class="navbar navbar-default navbar-inverse " role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+          <h3 class="muted"><%= link_to "SocialData", root_path %></h3>
+          <h5 class="muted">Just for a demo purpose.</h5>
+      </div>
+    </div> 
+  </nav>    
+  <div class="container">
+    <div class="jumbotron">
+        <%= yield %>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-xs-12">
+        <footer class = "text-center" >
+          <p>&copy; Company 2014</p>
+        </footer>  
+      </div>
+    </div>
+  </div>
+</body>
+</html>

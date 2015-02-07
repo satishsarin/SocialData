@@ -1,0 +1,81 @@
+<div class="row col-md-offset-4">
+<%= form_tag '/index', :class=> "navbar-form navbar-left" do %>
+  <div class="form-group">
+    <%= text_field_tag 'username', @username, placeholder: "Enter UserName", class: "form-control"  %>
+  </div>
+  <%= submit_tag "submit", class: "btn btn-default" %>
+<% end %>
+</div>
+
+<div class="row">
+<p class="col-md-offset-10"> <%= link_to "Download PDF", "/index.pdf?username=#{@username}",:method=> 'post' %></p>
+    <fieldset>
+    <legend>Tweets:</legend>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Row</th>
+                <th>User Name</th>
+                <th>Tweets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @tweets_fetch_from_twitter %>
+            <tr>
+                <td>1</td>
+                <td><%= @username %></td>
+                <td><%= convert_array_to_str(@tweets_fetch_from_twitter) %></td>
+            </tr>        
+          <%end%>  
+        </tbody>
+    </table>
+    </fieldset>
+
+    <fieldset>
+    <legend>GitHub Details:</legend>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Row</th>
+                <th>User Name</th>
+                <th>Date Of Joining</th>
+                <th>Name Of Repositories</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @fetch_git_details %>
+            <tr>
+                <td>1</td>
+                <td><%= @username %></td>
+                <td><%= @fetch_git_details[:doj]%></td>
+                <td><%= convert_array_to_str(@fetch_git_details[:repos_name]) %></td>
+            </tr>        
+          <%end%>  
+        </tbody>
+    </table>
+    </fieldset>
+
+    <fieldset>
+    <legend>RubyGems Details:</legend>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Row</th>
+                <th>User Name</th>
+                <th>Date Of Joining</th>
+                <th>Name Of All Gems Published</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @rubygems_details %>
+            <tr>
+                <td>1</td>
+                <td><%= @username %></td>
+                <td>NA</td>
+                <td><%= convert_array_to_str(@rubygems_details[:rubygems_name]) %></td>
+            </tr>        
+          <%end%>  
+        </tbody>
+    </table>
+    </fieldset>
+</div>
