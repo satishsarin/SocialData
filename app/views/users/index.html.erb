@@ -20,13 +20,13 @@
             </tr>
         </thead>
         <tbody>
-            <% if @tweets_fetch_from_twitter %>
+          <% if @tweets_fetch_from_twitter %>
             <tr>
                 <td>1</td>
                 <td><%= @username %></td>
                 <td><%= convert_array_to_str(@tweets_fetch_from_twitter) %></td>
             </tr>        
-          <%end%>  
+          <% end %>  
         </tbody>
     </table>
     </fieldset>
@@ -47,7 +47,7 @@
             <tr>
                 <td>1</td>
                 <td><%= @username %></td>
-                <td>NA</td>
+                <td><%= @fetch_git_details[:doj]%></td>
                 <td><%= convert_array_to_str(@fetch_git_details[:repos_name]) %></td>
             </tr>        
           <%end%>  
@@ -71,7 +71,7 @@
             <tr>
                 <td>1</td>
                 <td><%= @username %></td>
-                <td><%= @rubygems_details[:doj]%></td>
+                <td>NA</td>
                 <td><%= convert_array_to_str(@rubygems_details[:rubygems_name]) %></td>
             </tr>        
           <%end%>  

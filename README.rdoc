@@ -3,26 +3,25 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+* First clone appliction:
 
-* Ruby version
+	$ git clone git@github.com:satishsarin/SocialData.git
 
-* System dependencies
+* After clone goto project's directory and install all of the required gems by using :
 
-* Configuration
+	$ bundle install
 
-* Database creation
+* First check wkhtmltopdf package is install in your system. To check type in terminal:
+	
+	$ which wkhtmltopdf
 
-* Database initialization
+	If the path above command return you this path("/usr/bin/wkhtmltopdf") then it ok.
 
-* How to run the test suite
+	If you will be getting no path the run this command to install the sysytem package.
+	
+	$ sudo apt-get install wkhtmltopdf
 
-* Services (job queues, cache servers, search engines, etc.)
+Note:	If it's differ from the this path("/usr/bin/wkhtmltopdf") then just update 
+			config/ initializers/wicked_pdf.rb. file to outputed path.
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+*	Now all set good to go just type $ rails s.
