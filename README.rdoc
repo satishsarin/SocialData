@@ -1,5 +1,14 @@
 == README
 
+1) A form where a user can enter any username. On submitting the form, it should fetch details from the following websites:-
+	a) Twitter- last 10 tweets. (if available) 
+	b) Github - date of joining, names of repositories (if available)
+	c) RubyGems- date of joining, Names of all gems published. (if available)
+
+2) Display the results and provide a download button. When user clicks on it, generate a PDF combining the details we got from the above 3 websites. 
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
